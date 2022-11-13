@@ -1,14 +1,13 @@
-import logo from "./logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Everything } from "./components/everything";
+import { Container } from "./components/Container";
 
 function App() {
-  return (
-    <div className="App">
-      <Everything />
-    </div>
-  );
+	return (
+		<div className="App">
+			<Container />
+		</div>
+	);
 }
 
 export default App;
