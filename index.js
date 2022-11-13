@@ -4,11 +4,12 @@ const http = require("http");
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const path = require("node:path");
-const { ExecuteDose } = require("./utils/doser");
+const { ExecuteDose } = require("./utils/dosingService");
+const { getSettings, saveSettings } = require("./utils/settingsService");
 
 const io = new Server(server, {
 	cors: {
-		origin: "http://192.168.1.100:3001",
+		origin: "http://localhost:3000",
 	},
 });
 
@@ -32,6 +33,10 @@ io.on("connection", (socket) => {
 		for (const doseItem of doseInfo.doseItems) {
 			await ExecuteDose(doseItem, doseInfo.waterVolume);
 		}
+	});
+	socket.emit("settings", getSettings());
+	socket.on("save-settings", (settings) => {
+		saveSettings(settings);
 	});
 });
 

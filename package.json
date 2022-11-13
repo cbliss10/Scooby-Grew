@@ -1,19 +1,21 @@
 {
-  "name": "scoobygrew",
-  "version": "1.0.0",
-  "description": "A hydroponic nutrient solution dosing service",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.2",
-    "socket.io": "^4.5.3",
-    "onoff": "^6.0.3"
-  },
-  "devDependencies": {
-    "eslint": "^8.27.0"
-  }
+	"name": "scoobygrew",
+	"version": "1.0.0",
+	"description": "A hydroponic nutrient solution dosing service",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "./node_modules/nodemon/bin/nodemon.js index.js --ignore 'settings.json'"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.18.2",
+		"onoff": "^6.0.3",
+		"socket.io": "^4.5.3"
+	},
+	"devDependencies": {
+		"eslint": "^8.27.0",
+		"nodemon": "^2.0.20"
+	}
 }
