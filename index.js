@@ -31,7 +31,7 @@ io.on("connection", (socket) => {
 	socket.on("dose", async (doseInfo) => {
 		console.log(doseInfo);
 		for (const doseItem of doseInfo.doseItems) {
-			await ExecuteDose(doseItem, doseInfo.waterVolume);
+			await ExecuteDose(doseItem, doseInfo.waterInfo);
 		}
 	});
 	socket.emit("settings", getSettings());

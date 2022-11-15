@@ -1,32 +1,7 @@
 const fs = require("fs");
+const { defaultSettings } = require("./defaultSettings");
 
 const settingsFilePath = "./settings.json";
-
-const defaultSettings = {
-	defaultWaterVolume: 4,
-	dosingProfiles: [
-		{
-			name: "General Usage",
-			dosages: [
-				{
-					name: "FloraMicro",
-					doseRate: 7.5,
-					pin: 4,
-				},
-				{
-					name: "FloraGro",
-					doseRate: 7.5,
-					pin: 27,
-				},
-				{
-					name: "FloraBloom",
-					doseRate: 7.5,
-					pin: 22,
-				},
-			],
-		},
-	],
-};
 
 const getSettings = () => {
 	if (!fs.existsSync(settingsFilePath)) {
