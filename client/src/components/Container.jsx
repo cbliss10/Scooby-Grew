@@ -6,16 +6,16 @@ import { NutrientControl } from "./NutrientControl";
 const socket = io("http://192.168.1.100:3000");
 
 export const Container = () => {
-	const [settings, setSettings] = useState([]);
+	const [settings, setSettings] = useState({
+		defaultWaterVolume: 0,
+		dosingProfiles: [],
+	});
 
 	useEffect(() => {
-		socket.on("connect", () => console.log("connected"));
 		socket.on("settings", (settings) => {
-			console.log(settings);
 			setSettings(settings);
 		});
 		return () => {
-			socket.off("connect");
 			socket.off("settings");
 		};
 	}, []);
