@@ -1,0 +1,15 @@
+[Unit]
+Description=Scooby-Grew
+After=network.target
+
+[Service]
+ExecStart=/home/cbliss/.nvm/versions/node/v18.12.0/bin/node /home/cbliss/Documents/Projects/Scooby-Grew/index.js
+Restart=always
+User=cbliss
+#Environment=PATH=/usr/bin:/usr/local/bin:/home/cbliss/Documents/Projects/Scooby-Grew
+Environment=NODE_ENV=production
+Environment=NODE_PORT=3001
+# WorkingDirectory=/home/cbliss/Documents/Projects/Scooby-Grew
+
+[Install]
+WantedBy=multi-user.target

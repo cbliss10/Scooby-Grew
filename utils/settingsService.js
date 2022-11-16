@@ -1,13 +1,19 @@
 const fs = require("fs");
 const { defaultSettings } = require("./defaultSettings");
+const logger = require("../logger");
 
-const settingsFilePath = "./settings.json";
+const settingsFilePath =
+	"/home/cbliss/Documents/Projects/Scooby-Grew/settings.json";
 
 const getSettings = () => {
-	if (!fs.existsSync(settingsFilePath)) {
-		saveSettings(defaultSettings);
+	try {
+		if (!fs.existsSync(settingsFilePath)) {
+			saveSettings(defaultSettings);
+		}
+		return JSON.parse(fs.readFileSync(settingsFilePath, "utf8"));
+	} catch (error) {
+		logger.error(error.message);
 	}
-	return JSON.parse(fs.readFileSync(settingsFilePath, "utf8"));
 };
 
 const saveSettings = (newSettings) => {

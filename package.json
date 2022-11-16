@@ -12,7 +12,8 @@
 	"dependencies": {
 		"express": "^4.18.2",
 		"onoff": "^6.0.3",
-		"socket.io": "^4.5.3"
+		"socket.io": "^4.5.3",
+		"winston": "^3.8.2"
 	},
 	"devDependencies": {
 		"eslint": "^8.27.0",

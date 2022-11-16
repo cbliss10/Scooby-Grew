@@ -6,6 +6,11 @@ const { Server } = require("socket.io");
 const path = require("node:path");
 const { ExecuteDose } = require("./utils/dosingService");
 const { getSettings, saveSettings } = require("./utils/settingsService");
+const logger = require("./logger");
+
+logger.info(process.env.NODE_PORT);
+logger.info(process.env.NODE_ENV);
+const port = process.env.NODE_PORT || 3000;
 
 const io = new Server(server, {
 	cors: {
@@ -24,7 +29,7 @@ app.get("*", async (req, res) => {
 });
 
 io.on("connection", (socket) => {
-	console.log("a user connected");
+	logger.log("info", "a user connected");
 	socket.on("disconnect", () => {
 		console.log("user disconnected");
 	});
@@ -40,6 +45,6 @@ io.on("connection", (socket) => {
 	});
 });
 
-server.listen(3000, () => {
-	console.log("listening on *:3000");
+server.listen(port, () => {
+	console.log(`listening on *:${port}`);
 });
