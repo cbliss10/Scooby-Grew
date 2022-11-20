@@ -62,21 +62,21 @@ const defaultSettings = {
 			],
 		},
 		{
-			name: "Late Growth",
+			name: "Late Growth (10 part)",
 			dosages: [
 				{
 					name: "FloraMicro",
-					doseRate: 6.8,
+					doseRate: 5.7,
 					pin: 4,
 				},
 				{
 					name: "FloraGro",
-					doseRate: 6.4,
+					doseRate: 6.6,
 					pin: 27,
 				},
 				{
 					name: "FloraBloom",
-					doseRate: 4.8,
+					doseRate: 3.8,
 					pin: 22,
 				},
 			],
