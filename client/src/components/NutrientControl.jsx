@@ -72,9 +72,12 @@ export const NutrientControl = (props) => {
 
 	return (
 		<div className="container">
-			<Form.Control as="select" onChange={onChangeProfile}>
-				{getFormOptions()}
-			</Form.Control>
+			<Form.Group>
+				<Form.Label>Select Profile:</Form.Label>
+				<Form.Control as="select" onChange={onChangeProfile}>
+					{getFormOptions()}
+				</Form.Control>
+			</Form.Group>
 			<Table striped bordered hover>
 				<thead>
 					<tr>
